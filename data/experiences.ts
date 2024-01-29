@@ -1,0 +1,88 @@
+export const experiences = [
+  {
+    id: 1,
+    logo: "/clubmed.jpeg",
+    position: "Développeur front-end",
+    company: "Club Med · Freelance",
+    duration: "sept. 2021 - nov. 2023 · 2 ans 3 mois",
+    where: "Ville de Paris, Île-de-France, France · Hybride",
+    summary:
+      "Développeur front-end / intégrateur au sein de l'équipe Booking Engine (toutes les étapes de la personnalisation du voyage jusqu'à la confirmation du paiement) du Club Med.",
+    lists: [
+      "Développement de nouvelles features",
+      "Résolutions de bugs",
+      "Création de nouveaux composants",
+      "Écriture de tests unitaires",
+      "Déploiement de review apps",
+    ],
+    skills: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "GraphQL",
+      "Jest",
+      "React Testing Library",
+      "Heroku",
+      "CircleCI",
+    ],
+  },
+  {
+    id: 2,
+    logo: "/weekendesk.jpeg",
+    position: "Développeur front-end",
+    company: "Weekendesk · CDI",
+    duration: "sept. 2019 - sept. 2021 · 2 ans 1 mois",
+    where: "Ville de Paris, Île-de-France, France · Hybride",
+    summary:
+      "Travail en étroite collaboration avec l'équipe UI/UX et back, dans une équipe composée de 6 développeurs dont 1 lead front et 1 PO, sous méthodologie Agile SCRUM.",
+    lists: [
+      "Développement de nouvelles fonctionnalités",
+      "Mise à jour de l'UI",
+      "Résolutions de bugs",
+      "Création de nouveaux composants",
+      "Écriture de tests unitaires",
+      "Déploiement de review apps",
+    ],
+    skills: [
+      "React",
+      "Next.js",
+      "Jest",
+      "React Testing Library",
+      "Heroku",
+      "Jenkins",
+      "SCRUM",
+    ],
+  },
+  {
+    id: 3,
+    logo: "/bcp.jpeg",
+    position: "Développeur front-end",
+    company: "Blockhain Partner · CDI",
+    duration: "oct. 2017 - juil. 2019 · 1 an 10 mois",
+    where: "Ville de Paris, Île-de-France, France · Hybride",
+    summary:
+      "Design de maquettes et développement de POCs (courts projets allant de 1 à 3 mois environ) en petites équipes composées d'un développeur front-end, d'un développeur back, d'un développeur Blockchain et d'un PO.",
+    lists: [
+      "Développement du front des projets",
+      "Design de maquettes",
+      "Réalisations graphiques (logos, cartes de visite...)",
+    ],
+    skills: ["React", "HTML", "CSS", "Vanilla JS", "Sketch", "Photoshop"],
+  },
+  {
+    id: 4,
+    logo: "/bcp.jpeg",
+    position: "Formatteur HTML/CSS",
+    company: "Collège Jean Monnet · Bénévolat",
+    duration: "mars 2017 - juil. 2017 · 5 mois",
+    where: "La Loupe",
+    summary:
+      "Formation des élèves du collège au HTML/CSS en parallèle de mes études de développeur Web à la Wild Code School.",
+    lists: [
+      "Apprentissage du HTML",
+      "Apprentissage du CSS",
+      "Suivi des projets",
+    ],
+    skills: ["HTML", "CSS"],
+  },
+];
