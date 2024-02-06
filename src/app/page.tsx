@@ -1,7 +1,7 @@
 import CV from "./components/CV/CV";
 import Hero from "./components/Hero";
 
-import Avatar from "../../public/avatar.jpeg";
+import Avatar from "../../public/avatar.jpg";
 
 export default function Home() {
   return (
