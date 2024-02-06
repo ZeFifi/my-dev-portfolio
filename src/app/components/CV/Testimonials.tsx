@@ -16,8 +16,8 @@ function Testimonials({
   reference,
 }: Props) {
   return (
-    <div className="grid grid-cols-[48px,1fr] gap-4">
-      <div>
+    <div className="lg:grid lg:grid-cols-[48px,1fr] gap-4">
+      <div className="float-left mr-4 lg:mr-0">
         <Image
           className="rounded-lg"
           src={picture}
@@ -30,7 +30,7 @@ function Testimonials({
         <p className="font-bold">{person}</p>
         <p className="font-light">{company}</p>
         <p className="font-light text-slate-500 mb-4">{position}</p>
-        <p>{reference}</p>
+        <p className="mt-14 lg:mt-0">{reference}</p>
       </div>
     </div>
   );

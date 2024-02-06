@@ -1,6 +1,7 @@
-import Me from "./components/Me";
-
 import CV from "./components/CV/CV";
+import Hero from "./components/Hero";
+
+import Avatar from "../../public/avatar.jpeg";
 
 export default function Home() {
   return (
@@ -9,14 +10,15 @@ export default function Home() {
       style={{ margin: "0 auto" }}
     >
       <div className="w-full">
-        <Me
+        <Hero
+          image={Avatar}
           title={
-            <h1 className="text-7xl text-right font-bold mb-4">
+            <h1 className="text-2xl lg:text-7xl text-center lg:text-right font-bold mb-4">
               Développeur front-end
             </h1>
           }
           content={
-            <p className="text-lg text-right font-light">
+            <p className="lg:text-lg lg:text-right font-light">
               Je m'appelle{" "}
               <span className="bg-gradient-to-r font-bold from-sky-400 to-blue-500 inline-block text-transparent bg-clip-text">
                 Philippe Pinceloup

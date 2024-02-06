@@ -23,8 +23,8 @@ function Experience({
   skills,
 }: Props) {
   return (
-    <div className="grid grid-cols-[48px,1fr] gap-4">
-      <div>
+    <div className="lg:grid lg:grid-cols-[48px,1fr] gap-4">
+      <div className="float-left mr-4 lg:mr-0">
         <Image
           className="rounded-lg"
           src={logo}
@@ -36,16 +36,20 @@ function Experience({
       <div className="text-sm">
         <p className="font-bold">{position}</p>
         <p className="font-light">{company}</p>
-        <p className="font-light text-slate-500">{duration}</p>
-        <p className="font-light text-slate-500 mb-4">{where}</p>
-        <p>{summary}</p>
+        <p className="font-light text-slate-500 text-xs lg:text-sm">
+          {duration}
+        </p>
+        <p className="font-light text-slate-500 mb-4 text-xs lg:text-sm">
+          {where}
+        </p>
+        <p className="mt-8 lg:mt-0">{summary}</p>
         <br />
         <ul className="list-disc ml-4">
           {lists.map((list) => (
             <li key={list}>{list}</li>
           ))}
         </ul>
-        <div className="flex gap-2 text-slate-500 mt-5">
+        <div className="flex flex-wrap gap-2 text-slate-500 mt-5">
           {skills.map((skill) => (
             <Tag key={skill} content={skill} />
           ))}
