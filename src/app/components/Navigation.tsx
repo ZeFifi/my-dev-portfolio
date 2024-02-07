@@ -15,10 +15,10 @@ function Navigation({ isMenuOpened, setIsMenuOpened }: Props) {
   return (
     <div>
       <button
-        className="lg:hidden flex top-0 -left-1 z-20 absolute text-black focus:outline-none p-6"
+        className="fixed lg:hidden flex top-2 left-2 z-20 text-black focus:outline-none p-5 bg-white rounded-full shadow-lg"
         onClick={() => setIsMenuOpened(!isMenuOpened)}
       >
-        <div className="absolute w-5 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+        <div className="absolute w-5 transform -translate-x-1/2 -translate-y-1/2 left-2.5 top-4.5">
           <span
             className={`absolute h-0.5 w-5 bg-black transform transition duration-300 ease-in-out ${
               isMenuOpened ? "rotate-45 delay-200" : "-translate-y-1.5"
