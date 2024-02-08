@@ -5,7 +5,7 @@ export const experiences = [
     position: "Développeur front-end",
     company: "Club Med · Freelance",
     duration: "sept. 2021 - nov. 2023 · 2 ans 3 mois",
-    where: "Ville de Paris, Île-de-France, France · Hybride",
+    where: "Paris · Hybride",
     summary:
       "Développeur front-end / intégrateur au sein de l'équipe Booking Engine (toutes les étapes de la personnalisation du voyage jusqu'à la confirmation du paiement) du Club Med.",
     lists: [
@@ -19,6 +19,7 @@ export const experiences = [
       "React",
       "Next.js",
       "Tailwind CSS",
+      "Flow",
       "GraphQL",
       "Jest",
       "React Testing Library",
@@ -32,7 +33,7 @@ export const experiences = [
     position: "Développeur front-end",
     company: "Weekendesk · CDI",
     duration: "sept. 2019 - sept. 2021 · 2 ans 1 mois",
-    where: "Ville de Paris, Île-de-France, France · Hybride",
+    where: "Paris · Hybride",
     summary:
       "Travail en étroite collaboration avec l'équipe UI/UX et back, dans une équipe composée de 6 développeurs dont 1 lead front et 1 PO, sous méthodologie Agile SCRUM.",
     lists: [
@@ -59,7 +60,7 @@ export const experiences = [
     position: "Développeur front-end",
     company: "Blockhain Partner · CDI",
     duration: "oct. 2017 - juil. 2019 · 1 an 10 mois",
-    where: "Ville de Paris, Île-de-France, France · Hybride",
+    where: "Paris · Hybride",
     summary:
       "Design de maquettes et développement de POCs (courts projets allant de 1 à 3 mois environ) en petites équipes composées d'un développeur front-end, d'un développeur back, d'un développeur Blockchain et d'un PO.",
     lists: [
