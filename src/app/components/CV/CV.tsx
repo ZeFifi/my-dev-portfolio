@@ -49,7 +49,9 @@ function CV() {
           />
         </div>
       ))}
-      <h2 className="text-md mb-5 mt-9">Ce qu'ils disent de moi</h2>
+      <h2 className="text-md mb-5 mt-9">
+        Ce qu'ils disent de moi <span className="lg:hidden">(swipez !)</span>
+      </h2>
       <Carousel
         opts={{
           align: "start",
