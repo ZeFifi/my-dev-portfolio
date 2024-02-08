@@ -36,9 +36,10 @@ export const projects = [
   {
     id: 1,
     name: "Charles Asselin Design",
+    image: "/projects/charles-asselin-design.svg",
     url: "https://charlesasselin.fr/",
-    iconName: null,
     isExternal: true,
+    technos: ["React", "Next", "Tailwind CSS", "Strapi", "Cloudinary"],
   },
 ];
 
@@ -67,9 +68,9 @@ export const mobileNavigationItems = [
   {
     id: 5,
     name: "Mes projets",
-    url: "https://charlesasselin.fr/",
+    url: "/projects",
     iconName: "fi-rr-handshake",
-    isExternal: true,
+    isExternal: false,
   },
   {
     id: 2,
