@@ -1,7 +1,7 @@
 export const testimonials = [
   {
     id: 1,
-    picture: "/florian-boherout.jpeg",
+    picture: "/florian-boherout.jpg",
     person: "Florian Bohérout",
     company: "Club Med",
     position: "Manager",
