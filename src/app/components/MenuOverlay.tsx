@@ -1,22 +1,13 @@
-import emailjs from "@emailjs/browser";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { mobileNavigationItems } from "../../../data/navigation-items";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "./ui/alert-dialog";
 
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { socialNetworks } from "../../../data/social-networks";
 import Logo from "../../../public/logo.svg";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
+import ContactForm from "./ContactForm";
 
 type Props = {
   isMenuOpened: boolean;
@@ -25,89 +16,10 @@ type Props = {
 
 export default function MenuOverlay({ isMenuOpened, setIsMenuOpened }: Props) {
   const [openModal, setOpenModal] = useState(false);
-
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID &&
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID &&
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    ) {
-      emailjs
-        .sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-          e.currentTarget,
-          {
-            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-          }
-        )
-        .then(
-          () => {
-            console.log("SUCCESS!");
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-          }
-        );
-    }
-  };
-
+  const router = useRouter();
   return (
     <>
-      <AlertDialog open={openModal} onOpenChange={setOpenModal}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Contact</AlertDialogTitle>
-            <AlertDialogDescription className="text-left">
-              Remplissez ce court formulaire pour me contact. Je vous répondrai
-              dans les plus brefs délais.
-            </AlertDialogDescription>
-            <form
-              className="flex flex-col gap-5"
-              onSubmit={(e) => sendEmail(e)}
-            >
-              <div className="flex gap-4">
-                <div className="text-left">
-                  <Input
-                    type="text"
-                    id="lastname"
-                    name="from_lastname"
-                    placeholder="Nom"
-                  />
-                </div>
-                <div className="text-left">
-                  <Input
-                    type="text"
-                    id="firstname"
-                    name="from_firstname"
-                    placeholder="Prénom"
-                  />
-                </div>
-              </div>
-              <div className="text-left">
-                <Input
-                  type="email"
-                  id="email"
-                  name="from_email"
-                  placeholder="Email"
-                />
-              </div>
-              <Textarea
-                placeholder="Votre message..."
-                name="message"
-                className="h-[220px]"
-              />
-              <div className="flex justify-center items-baseline gap-5">
-                <AlertDialogCancel>Fermer</AlertDialogCancel>
-                <AlertDialogAction type="submit">Envoyer</AlertDialogAction>
-              </div>
-            </form>
-          </AlertDialogHeader>
-        </AlertDialogContent>
-      </AlertDialog>
-
+      <ContactForm openModal={openModal} setOpenModal={setOpenModal} />
       <nav
         className={`fixed flex flex-col top-0 left-0 w-full p-10 z-10 h-screen bg-[#f1f5f9] text-black bg-opacity-100 transform delay-100 transition-all duration-300 ${
           isMenuOpened
@@ -122,23 +34,24 @@ export default function MenuOverlay({ isMenuOpened, setIsMenuOpened }: Props) {
         </div>
         <div className="grid grid-cols-2 gap-2 mb-2">
           {mobileNavigationItems.map((item) => (
-            <Link
+            <button
               key={item.id}
               className="bg-white p-4 border border-gray-150 rounded-lg h-[98px] flex items-center justify-center"
               onClick={() => {
-                if (item.url === "#") {
+                if (item.name === "Contact") {
                   setOpenModal(true);
                 }
                 setIsMenuOpened(false);
+                if (item.url) {
+                  router.push(item.url);
+                }
               }}
-              href={item.url}
-              target={item.isExternal ? "_blank" : "_self"}
             >
               <div className="flex flex-col text-center">
                 <i className={`fi ${item.iconName} text-2xl`}></i>
                 {item.name}
               </div>
-            </Link>
+            </button>
           ))}
         </div>
         <div className="grid grid-cols-3 gap-2">

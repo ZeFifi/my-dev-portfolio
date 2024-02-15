@@ -75,7 +75,6 @@ export const mobileNavigationItems = [
   {
     id: 2,
     name: "Contact",
-    url: "#",
     iconName: "fi-rr-envelope",
     isExternal: false,
   },
