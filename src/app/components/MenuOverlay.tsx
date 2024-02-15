@@ -1,5 +1,7 @@
+import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { mobileNavigationItems } from "../../../data/navigation-items";
 import {
   AlertDialog,
@@ -7,12 +9,10 @@ import {
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
-  AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
 } from "./ui/alert-dialog";
 
-import { useState } from "react";
 import { socialNetworks } from "../../../data/social-networks";
 import Logo from "../../../public/logo.svg";
 import { Input } from "./ui/input";
@@ -25,6 +25,35 @@ type Props = {
 
 export default function MenuOverlay({ isMenuOpened, setIsMenuOpened }: Props) {
   const [openModal, setOpenModal] = useState(false);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID &&
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID &&
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    ) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          e.currentTarget,
+          {
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+          }
+        )
+        .then(
+          () => {
+            console.log("SUCCESS!");
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    }
+  };
+
   return (
     <>
       <AlertDialog open={openModal} onOpenChange={setOpenModal}>
@@ -35,29 +64,47 @@ export default function MenuOverlay({ isMenuOpened, setIsMenuOpened }: Props) {
               Remplissez ce court formulaire pour me contact. Je vous répondrai
               dans les plus brefs délais.
             </AlertDialogDescription>
-            <div className="flex flex-col gap-5">
+            <form
+              className="flex flex-col gap-5"
+              onSubmit={(e) => sendEmail(e)}
+            >
               <div className="flex gap-4">
                 <div className="text-left">
-                  <Input type="text" id="lastname" placeholder="Nom" />
+                  <Input
+                    type="text"
+                    id="lastname"
+                    name="from_lastname"
+                    placeholder="Nom"
+                  />
                 </div>
                 <div className="text-left">
-                  <Input type="text" id="firstname" placeholder="Prénom" />
+                  <Input
+                    type="text"
+                    id="firstname"
+                    name="from_firstname"
+                    placeholder="Prénom"
+                  />
                 </div>
               </div>
               <div className="text-left">
-                <Input type="email" id="email" placeholder="Email" />
+                <Input
+                  type="email"
+                  id="email"
+                  name="from_email"
+                  placeholder="Email"
+                />
               </div>
-              <Textarea placeholder="Votre message..." className="h-[220px]" />
-            </div>
+              <Textarea
+                placeholder="Votre message..."
+                name="message"
+                className="h-[220px]"
+              />
+              <div className="flex justify-center items-baseline gap-5">
+                <AlertDialogCancel>Fermer</AlertDialogCancel>
+                <AlertDialogAction type="submit">Envoyer</AlertDialogAction>
+              </div>
+            </form>
           </AlertDialogHeader>
-          <AlertDialogFooter>
-            <div className="flex justify-center items-baseline gap-5">
-              <AlertDialogCancel>Fermer</AlertDialogCancel>
-              <AlertDialogAction onClick={() => console.log("Message envoyé")}>
-                Envoyer
-              </AlertDialogAction>
-            </div>
-          </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
