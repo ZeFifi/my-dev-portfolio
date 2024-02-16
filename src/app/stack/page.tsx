@@ -8,7 +8,7 @@ import Hero from "../components/Hero";
 function Stack() {
   return (
     <main
-      className="mx-auto w-full max-w-3xl px-4 py-12 pb-10 md:px-8"
+      className="mx-auto lg:relative lg:left-[143px] w-full max-w-3xl px-4 py-12 pb-10 md:px-8"
       style={{ margin: "0 auto" }}
     >
       <div className="w-full">

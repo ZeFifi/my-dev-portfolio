@@ -36,7 +36,7 @@ function Navigation({ isMenuOpened, setIsMenuOpened }: Props) {
           ></span>
         </div>
       </button>
-      <nav className="hidden fixed md:flex h-full max-h-screen min-h-screen border-r border-gray-150 bg-white pb-10 sm:pb-0 md:w-1/3 2xl:w-72">
+      <nav className="hidden fixed md:flex h-full max-h-screen min-h-screen border-r border-gray-150 bg-white pb-10 sm:pb-0 md:w-1/5 2xl:w-72">
         <div className="flex-1 px-9 py-9 space-y-1">
           <div className="flex justify-center">
             <Link href="/" className="mb-9">
