@@ -5,7 +5,7 @@ import stackImage from "../../../public/stack-image.jpg";
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 
-function Stack() {
+const Stack = () => {
   return (
     <main
       className="mx-auto lg:relative lg:left-[143px] w-full max-w-3xl px-4 py-12 pb-10 md:px-8"
@@ -73,6 +73,6 @@ function Stack() {
       </div>
     </main>
   );
-}
+};
 
 export default Stack;

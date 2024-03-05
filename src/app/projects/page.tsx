@@ -5,7 +5,7 @@ import projectsImage from "../../../public/projects-image.jpg";
 import Hero from "../components/Hero";
 import Tag from "../components/Tag";
 
-function Projects() {
+const Projects = () => {
   return (
     <main
       className="mx-auto w-full max-w-3xl px-4 py-12 pb-10 md:px-8"
@@ -57,6 +57,6 @@ function Projects() {
       </div>
     </main>
   );
-}
+};
 
 export default Projects;

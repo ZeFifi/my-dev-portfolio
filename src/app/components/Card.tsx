@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {
+type CardProps = {
   content?: string;
   hasLogoOnly?: boolean;
   logo: string;
@@ -9,7 +9,7 @@ type Props = {
   url?: string;
 };
 
-function Card({ content, hasLogoOnly, logo, title, url }: Props) {
+const Card = ({ content, hasLogoOnly, logo, title, url }: CardProps) => {
   return (
     <div className="bg-white p-4 border border-gray-150 mb-2 rounded-lg text-sm w-full">
       <div
@@ -42,6 +42,6 @@ function Card({ content, hasLogoOnly, logo, title, url }: Props) {
       {hasLogoOnly && <p className="mt-4 text-center">{title}</p>}
     </div>
   );
-}
+};
 
 export default Card;

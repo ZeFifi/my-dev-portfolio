@@ -8,12 +8,12 @@ import { socialNetworks } from "../../../data/social-networks";
 import Logo from "../../../public/logo.svg";
 import ContactForm from "./ContactForm";
 
-type Props = {
+type MenuOverlayProps = {
   isMenuOpened: boolean;
   setIsMenuOpened: Function;
 };
 
-export default function MenuOverlay({ isMenuOpened, setIsMenuOpened }: Props) {
+const MenuOverlay = ({ isMenuOpened, setIsMenuOpened }: MenuOverlayProps) => {
   const [openModal, setOpenModal] = useState(false);
   const router = useRouter();
   return (
@@ -72,4 +72,6 @@ export default function MenuOverlay({ isMenuOpened, setIsMenuOpened }: Props) {
       </nav>
     </>
   );
-}
+};
+
+export default MenuOverlay;

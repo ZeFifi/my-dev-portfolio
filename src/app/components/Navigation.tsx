@@ -6,12 +6,12 @@ import { socialNetworks } from "../../../data/social-networks";
 import Logo from "../../../public/logo.svg";
 import NavigationSection from "./NavigationSection";
 
-type Props = {
+type NavigationProps = {
   isMenuOpened: boolean;
-  setIsMenuOpened: Function;
+  setIsMenuOpened: (open: boolean) => void;
 };
 
-function Navigation({ isMenuOpened, setIsMenuOpened }: Props) {
+const Navigation = ({ isMenuOpened, setIsMenuOpened }: NavigationProps) => {
   return (
     <div>
       <button
@@ -66,6 +66,6 @@ function Navigation({ isMenuOpened, setIsMenuOpened }: Props) {
       </nav>
     </div>
   );
-}
+};
 
 export default Navigation;

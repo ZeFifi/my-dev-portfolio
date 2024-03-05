@@ -1,11 +1,19 @@
 import Link from "next/link";
 
-type Props = {
-  items: any[];
+type NavigationItem = {
+  id: number;
+  name: string;
+  url: string;
+  iconName?: string;
+  isExternal: boolean;
+};
+
+type NavigationSectionProps = {
+  items: NavigationItem[];
   sectionTitle: string;
 };
 
-function NavigationSection({ items, sectionTitle }: Props) {
+const NavigationSection = ({ items, sectionTitle }: NavigationSectionProps) => {
   return (
     <div>
       <p className="hidden lg:block px-2 pt-5 pb-2 text-xs font-semibold text-slate-500">
@@ -34,6 +42,6 @@ function NavigationSection({ items, sectionTitle }: Props) {
       </ul>
     </div>
   );
-}
+};
 
 export default NavigationSection;

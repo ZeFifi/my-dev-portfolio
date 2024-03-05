@@ -11,7 +11,7 @@ const hoverColor = (socialNetwork: { name: string }) => {
   return "";
 };
 
-function SocialNetworks() {
+const SocialNetworks = () => {
   return (
     <ul className="flex gap-9">
       {socialNetworks.map((socialNetwork) => (
@@ -33,6 +33,6 @@ function SocialNetworks() {
       ))}
     </ul>
   );
-}
+};
 
 export default SocialNetworks;

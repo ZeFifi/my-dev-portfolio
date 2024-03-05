@@ -11,12 +11,12 @@ import {
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 
-interface Props {
+interface ContactFormProps {
   openModal: boolean;
   setOpenModal: (open: boolean) => void;
 }
 
-function ContactForm({ openModal, setOpenModal }: Props) {
+const ContactForm = ({ openModal, setOpenModal }: ContactFormProps) => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -95,6 +95,6 @@ function ContactForm({ openModal, setOpenModal }: Props) {
       </AlertDialogContent>
     </AlertDialog>
   );
-}
+};
 
 export default ContactForm;
