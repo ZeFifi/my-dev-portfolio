@@ -2,8 +2,8 @@ import { apps } from "../../../data/apps";
 import { technos } from "../../../data/technos";
 import { vsCodeAddons } from "../../../data/vsCodeAddons";
 import stackImage from "../../../public/stack-image.jpg";
-import Card from "../components/Card";
 import Hero from "../components/Hero";
+import StackBlock from "../components/StackBlock";
 
 const Stack = () => {
   return (
@@ -35,41 +35,18 @@ const Stack = () => {
         />
       </div>
       <div className="mt-20">
-        <h2 className="mb-5 text-xl font-bold">Mes technos</h2>
-        <div className="mb-9 grid grid-cols-3 gap-2">
-          {technos.map((techno) => (
-            <Card
-              key={techno.id}
-              logo={techno.logo}
-              title={techno.name}
-              hasLogoOnly
-            />
-          ))}
-        </div>
-        <h2 className="mb-5 text-xl font-bold">Mes apps</h2>
-        <div className="mb-9">
-          {apps.map((app) => (
-            <Card
-              key={app.id}
-              content={app.description}
-              logo={app.logo}
-              title={app.name}
-              url={app.url}
-            />
-          ))}
-        </div>
-        <h2 className="mb-5 text-xl font-bold">Mes extensions VS Code</h2>
-        <div className="mb-9">
-          {vsCodeAddons.map((addon) => (
-            <Card
-              key={addon.id}
-              content={addon.description}
-              logo={addon.logo}
-              title={addon.name}
-              url={addon.url}
-            />
-          ))}
-        </div>
+        <StackBlock
+          array={technos}
+          className="mb-9 grid grid-cols-3 gap-2"
+          title="Mes technos"
+          hasLogoOnly
+        />
+        <StackBlock array={apps} className="mb-9" title="Mes apps" />
+        <StackBlock
+          array={vsCodeAddons}
+          className="mb-9"
+          title="Mes extensions VS Code"
+        />
       </div>
     </main>
   );
