@@ -13,11 +13,4 @@ export const socialNetworks = [
     url: "https://github.com/ZeFifi",
     isExternal: true,
   },
-  {
-    id: 3,
-    name: "Instagram",
-    iconName: "fi-brands-instagram",
-    url: "https://www.instagram.com/fifouuuh/",
-    isExternal: true,
-  },
 ];

@@ -1,11 +1,47 @@
 export const experiences = [
   {
     id: 1,
+    logo: "/lite.png",
+    position: "Développeur front-end",
+    company: "Lite · Freelance",
+    duration: "mai 2021 -",
+    where: "Paris · Hybride 1j présence / 2 semaines",
+    summary:
+      "Au sein d'une équipe de 5 développeurs (1 CTO/back, 1 lead tech, 1 back et 1 front en plus de moi), d'un PO et d'une graphiste, j'ai développé la plateforme Economee from scratch :",
+    lists: [
+      "Création de toute l'étape d'onboarding des clients",
+      "Création du dashboard de consommation d'énergie avec graphiques visx (svg)",
+      "Développement de features",
+      "Tests end-to-end (E2E) avec Playwright",
+      "Animations avec Framer Motion + CSS",
+      "Mise en place de GitHub Actions pour le déploiement sur différents environnements",
+      "Formulaires avec React-Hook-Form et Zod",
+    ],
+    skills: [
+      "React",
+      "Typescript",
+      "Javascript",
+      "Tailwind CSS",
+      "CSS",
+      "Context API",
+      "Zustand",
+      "React-Hook-Form",
+      "Zod",
+      "Jest",
+      "Playwright",
+      "React Testing Library",
+      "Clever Cloud",
+      "GitHub Actions",
+      "Kanban",
+    ],
+  },
+  {
+    id: 2,
     logo: "/clubmed.jpeg",
     position: "Développeur front-end",
     company: "Club Med · Freelance",
     duration: "sept. 2021 - nov. 2023 · 2 ans 3 mois",
-    where: "Paris · Hybride",
+    where: "Paris · Hybride 1j présence / semaine",
     summary:
       "Développeur front-end / intégrateur au sein de l'équipe Booking Engine (toutes les étapes de la personnalisation du voyage jusqu'à la confirmation du paiement) du Club Med.",
     lists: [
@@ -28,7 +64,7 @@ export const experiences = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     logo: "/weekendesk.jpeg",
     position: "Développeur front-end",
     company: "Weekendesk · CDI",
@@ -55,7 +91,7 @@ export const experiences = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     logo: "/bcp.jpeg",
     position: "Développeur front-end",
     company: "Blockhain Partner · CDI",
@@ -71,7 +107,7 @@ export const experiences = [
     skills: ["React", "HTML", "CSS", "Vanilla JS", "Sketch", "Photoshop"],
   },
   {
-    id: 4,
+    id: 5,
     logo: "/bcp.jpeg",
     position: "Formatteur HTML/CSS",
     company: "Collège Jean Monnet · Bénévolat",
